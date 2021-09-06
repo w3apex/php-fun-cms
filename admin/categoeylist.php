@@ -1,4 +1,10 @@
 <?php include 'inc/header.php';?>
+<?php 
+	include '../config/config.php';
+
+	$sql = "SELECT * FROM category ORDER BY id DESC";
+	$result = mysqli_query($conn, $sql);
+?>
 <!-- page BODY -->
 <div class="page-body">
     <?php include 'inc/sidebar.php';?>
@@ -39,14 +45,18 @@
 		                            </tr>
 	                            </thead>
 	                            <tbody>
+	                            	<?php 
+	                            		while ($rows = mysqli_fetch_assoc($result)) {
+	                            	?>
 	                            	<tr>
-	                            		<td>1</td>
-	                            		<td>National</td>
+	                            		<td><?php echo $rows['id'];?></td>
+	                            		<td><?php echo $rows['cat_name'];?></td>
 	                            		<td>
-	                            			<a href="#">Edit</a> ||
+	                            			<a href="editCategory.php?editId=<?php echo $rows['id'];?>">Edit</a> ||
 	                            			<a onclick="return confirm('Are you sure to delete?');" href="#">Delete</a>
 	                            		</td>
-	                            	</tr>	
+	                            	</tr>
+	                            	<?php } ?>	
 	                            </tbody>
 	                        </table>
 	                    </div>
