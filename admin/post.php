@@ -31,13 +31,41 @@
 			        	</div>
 			            <div class="row">
 			                <div class="col-md-12">
-			                    <form class="form-horizontal">
+			                    <form action="" class="form-horizontal" method="POST">
+
 			                        <div class="form-group">
 			                            <label for="title" class="col-sm-2 control-label">Title</label>
 			                            <div class="col-sm-10">
 			                                <input type="text" class="form-control" name="title" id="title" placeholder="Title">
 			                            </div>
 			                        </div>
+
+			                        <div class="form-group">
+			                            <label for="cat_id" class="col-sm-2 control-label">Category</label>
+			                            <div class="col-sm-10">
+			                            	<select name="cat_id" class="form-control">
+			                            		<option>Select a Categpry</option>
+
+			                            		<option>National</option>
+
+			                            	</select>
+			                            </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                            <label for="image" class="col-sm-2 control-label">Image</label>
+			                            <div class="col-sm-10">
+			                                <input type="file" class="form-control" name="image" id="image">
+			                            </div>
+			                        </div>
+
+			                        <div class="form-group">
+			                            <label for="content" class="col-sm-2 control-label">Content</label>
+			                            <div class="col-sm-10">
+			                                <textarea name="content" class="form-control"></textarea>
+			                            </div>
+			                        </div>
+
 			                        <div class="form-group">
 			                            <div class="col-sm-offset-2 col-sm-10">
 			                                <button type="submit" class="btn btn-primary">Save</button>
